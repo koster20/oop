@@ -1,33 +1,49 @@
 package ru.sgu.oop;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Data {
-    ArrayList<ru.sgu.oop.Clients> Clients = new ArrayList<>();
-    ArrayList<Sellings> Sellings= new ArrayList<>();
-    ArrayList<ru.sgu.oop.Rooms> Rooms = new ArrayList<>();
+    @JacksonXmlElementWrapper(localName = "Clients")
+    ArrayList<ru.sgu.oop.Clients> Client = new ArrayList<>();
+
+    @JacksonXmlElementWrapper(localName = "Sellings")
+    ArrayList<Sellings> Selling = new ArrayList<>();
+
+    @JacksonXmlElementWrapper(localName = "Rooms")
+    ArrayList<ru.sgu.oop.Rooms> Room = new ArrayList<>();
 
 
 
-    public List<ru.sgu.oop.Sellings> getSelling() {
-        return Sellings;
-    }
     public void setSell(ru.sgu.oop.Sellings sell) {
-        Sellings.add(sell);
+        Selling.add(sell);
     }
 
-    public void setClients(ru.sgu.oop.Clients cl) {
-        Clients.add(cl);
-    }
-    public List<ru.sgu.oop.Clients> getClients() {
-        return Clients;
-    }
-    public List<ru.sgu.oop.Rooms> getRooms() {
-        return Rooms;
+    public void setClient(ru.sgu.oop.Clients cl) {
+        Client.add(cl);
     }
 
-    public void setRooms(ru.sgu.oop.Rooms r) {
-        Rooms.add(r);
+
+
+    public void setRoom(ru.sgu.oop.Rooms r) {
+        Room.add(r);
     }
+    @JsonIgnore
+    public List<ru.sgu.oop.Rooms> getRoom() {
+        return Room;
+    }
+    @JsonIgnore
+    public List<ru.sgu.oop.Clients> getClient() {
+        return Client;
+    }
+
+    @JsonIgnore
+    public List<ru.sgu.oop.Sellings> getSelling() {
+        return Selling;
+    }
+
 }

@@ -1,51 +1,59 @@
 <Data>
-    <client>
-        <client>
+    <Clients>
+        <Client>
             <name>Alex</name>
             <id>0</id>
             <passport>6291 228337</passport>
-        </client>
-        <client>
+        </Client>
+        <Client>
             <name>Petr</name>
             <id>1</id>
             <passport>1488 629157</passport>
-        </client>
-    </client>
-    <selling>
-        <selling>
+        </Client>
+    </Clients>
+    <Sellings>
+        <Selling>
             <id>0</id>
-            <checkInDate>10.02.2020</checkInDate>
             <releaseData>24.02.2020</releaseData>
+            <settlement>
+                <type>"Standart"</type>
+                <number>1</number>
+                <id>0</id>
+                <price>40000</price>
+                <capacity>5</capacity>
+            </settlement>
             <customer>
                 <name>alex</name>
                 <id>0</id>
                 <passport>25435123</passport>
             </customer>
+            <checkInDate>10.02.2020</checkInDate>
+        </Selling>
+        <Selling>
+            <id>1</id>
+            <releaseData>24.02.2020</releaseData>
             <settlement>
                 <type>"Standart"</type>
                 <number>1</number>
-                <id>0</id>
-                <capacity>5</capacity>
+                <id>1</id>
                 <price>40000</price>
+                <capacity>5</capacity>
             </settlement>
-        </selling>
-        <selling>
-            <id>1</id>
-            <checkInDate>10.02.2020</checkInDate>
-            <releaseData>24.02.2020</releaseData>
             <customer>
                 <name>John</name>
                 <id>1</id>
                 <passport>2543 555513</passport>
             </customer>
-            <settlement>
-                <type>"Standart"</type>
-                <number>1</number>
-                <id>1</id>
-                <capacity>5</capacity>
-                <price>40000</price>
-            </settlement>
-        </selling>
-    </selling>
-    <rooms/>
+            <checkInDate>10.02.2020</checkInDate>
+        </Selling>
+    </Sellings>
+    <Rooms>
+        <Room>
+            <type>undefined</type>
+            <number>0</number>
+            <id>0</id>
+            <price>0</price>
+            <capacity>0</capacity>
+        </Room>
+    </Rooms>
 </Data>

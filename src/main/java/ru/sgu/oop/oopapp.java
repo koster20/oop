@@ -2,7 +2,9 @@ package ru.sgu.oop;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import functionalTests.component.migration.X;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,6 +13,7 @@ import java.nio.file.Paths;
 import java.sql.*;
 
 public class oopapp {
+
     public static Connection connect() {
         Connection conn = null;
         try {
@@ -79,7 +82,7 @@ public class oopapp {
         } catch (SQLException e) {
             System.out.println(e);
         }
-        sql = "SELECT * FROM Сlient";
+        sql = "SELECT * FROM Сlients";
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
@@ -90,7 +93,7 @@ public class oopapp {
                 clients.setName(rs.getString("Name"));
                 clients.setPassport(rs.getString("Passport"));
 
-                data.setClients(clients);
+                data.setClient(clients);
             }
 
         }catch (SQLException e) {
@@ -132,20 +135,16 @@ public class oopapp {
     public static void serializeToXML(Data sell) {
 
         try {
-
             XmlMapper xmlMapper = new XmlMapper();
-
-            // serialize our Object into XML string
-            String xmlString = xmlMapper.writeValueAsString(sell);
-
-            // write to the console
-            System.out.println(xmlString);
-
-            // write XML string to file
-            File xmlOutput = new File("resource/out/Sellings.xml");
-            FileWriter fileWriter = new FileWriter(xmlOutput);
-            fileWriter.write(xmlString);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            xmlMapper.writeValue(byteArrayOutputStream, sell);
+            File write = new File("Resource/out/Sellings.xml");
+            FileWriter fileWriter = new FileWriter(write);
+            fileWriter.write(byteArrayOutputStream.toString());
             fileWriter.close();
+
+
+
         } catch (JsonProcessingException e) {
             // handle exception
             System.out.println(e);
@@ -154,6 +153,7 @@ public class oopapp {
             System.out.println(e);
         }
     }
+
 
     public static void main(String[] args) {
 

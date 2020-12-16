@@ -51,17 +51,17 @@ public class Rooms {
         System.out.println("ID: " + getID()+"\nНомер: "+getNumber()+"\nВместимость: " + getCapacity()+"\nЦена" + getPrice()+ "\nТип: " +getType());
     }
 
-//    Rooms(int number, int capacity, String type, int price){
-//        Number= number;
-//        Capacity = capacity;
-//        Type = type;
-//        Price = price;
-//    }
-//    Rooms()
-//    {
-//        Number = 0;
-//        Capacity =0;
-//        Type = "undefined";
-//        Price = 0;
-//    }
+    Rooms(int number, int capacity, String type, int price){
+        Number= number;
+        Capacity = capacity;
+        Type = type;
+        Price = price;
+    }
+    Rooms()
+    {
+        Number = 0;
+        Capacity =0;
+        Type = "undefined";
+        Price = 0;
+    }
 }

@@ -32,10 +32,10 @@ public class Clients {
     public void showInfo(){
         System.out.println("id: " + getID() + "Имя: " + getName() + "Паспорт: " + getPassport());
     }
-//    Clients() {
-//
-//        Name = "Undefined";
-//        Passport = "0000000000";
-//
-//    }
+    Clients() {
+
+        Name = "Undefined";
+        Passport = "0000000000";
+
+    }
 }
