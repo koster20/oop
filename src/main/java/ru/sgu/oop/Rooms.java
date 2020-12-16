@@ -48,7 +48,7 @@ public class Rooms {
     }
 
     public void ShowInfo(){
-        System.out.println("ID: " + getID()+"\nНомер: "+getNumber()+"\nВместимость: " + getCapacity()+"\nЦена" + getPrice()+ "\nТип: " +getType());
+        System.out.println("ID: " + getID()+"\tНомер: "+getNumber()+"\tВместимость: " + getCapacity()+"\tЦена: " + getPrice()+ "\tТип: " +getType());
     }
 
     Rooms(int number, int capacity, String type, int price){

@@ -53,5 +53,11 @@ class Sellings {
     public String SettlementForSQL() {
         return "\t" + "\t" + Settlement.getNumber() + "\t" + "\t" + "\t" + "\t" + Settlement.getCapacity()+"\t"+"\t" + "\t  "  + Settlement.getType()+"\t" + "\t"+Settlement.getPrice();
     }
-
+    public void ShowInfo()
+    {
+        System.out.println("\nИнформация о сдаче №" + ID);
+        Customer.showInfo();
+        Settlement.ShowInfo();
+        System.out.println("Дата заселения: " + CheckInDate +"\tДата сдачи: " + ReleaseData);
+    }
 }

@@ -9,41 +9,55 @@ import java.util.List;
 
 public class Data {
     @JacksonXmlElementWrapper(localName = "Clients")
-    ArrayList<ru.sgu.oop.Clients> Client = new ArrayList<>();
+    ArrayList<Clients> Client = new ArrayList<>();
 
     @JacksonXmlElementWrapper(localName = "Sellings")
     ArrayList<Sellings> Selling = new ArrayList<>();
 
     @JacksonXmlElementWrapper(localName = "Rooms")
-    ArrayList<ru.sgu.oop.Rooms> Room = new ArrayList<>();
+    ArrayList<Rooms> Room = new ArrayList<>();
 
 
 
-    public void setSell(ru.sgu.oop.Sellings sell) {
+    public void setSell(Sellings sell) {
         Selling.add(sell);
     }
 
-    public void setClient(ru.sgu.oop.Clients cl) {
+    public void setClient(Clients cl) {
         Client.add(cl);
     }
 
 
 
-    public void setRoom(ru.sgu.oop.Rooms r) {
+    public void setRoom(Rooms r) {
         Room.add(r);
     }
     @JsonIgnore
-    public List<ru.sgu.oop.Rooms> getRoom() {
+    public ArrayList<Rooms> getRooms() {
         return Room;
     }
     @JsonIgnore
-    public List<ru.sgu.oop.Clients> getClient() {
+    public ArrayList<Clients> getClients() {
         return Client;
     }
 
     @JsonIgnore
-    public List<ru.sgu.oop.Sellings> getSelling() {
+    public ArrayList<Sellings> getSellings() {
         return Selling;
     }
-
+    @JsonIgnore
+    public void ShowInfo() {
+        for (Clients cl : Client) {
+            System.out.println("cl");
+            cl.showInfo();
+        }
+        for (Rooms r : Room) {
+            System.out.println("R");
+            r.ShowInfo();
+        }
+        for (Sellings sl : Selling) {
+            System.out.println("sl");
+            sl.ShowInfo();
+        }
+    }
 }
